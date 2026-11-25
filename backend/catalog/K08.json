@@ -1,0 +1,106 @@
+{
+  "id": "K08",
+  "topic": "Logarytmy",
+  "title": "Logarytm sumy",
+  "false_rule": "Logarytm sumy to suma logarytmów: log(a + b) = log a + log b",
+  "correct_rule": "log a + log b = log(a · b); logarytmu sumy nie da się rozbić",
+  "correct_rule_latex": "\\log a + \\log b = \\log(a \\cdot b)",
+  "kuba_restate": "Aha, czyli suma logarytmów to logarytm iloczynu, a logarytmu sumy nie rozbijam.",
+  "param_sets": [
+    {
+      "a": 10,
+      "k": 1
+    },
+    {
+      "a": 100,
+      "k": 2
+    },
+    {
+      "a": 1000,
+      "k": 3
+    }
+  ],
+  "derived": {},
+  "var": "x",
+  "task_latex": "\\log(x + {a})",
+  "lines": [
+    {
+      "latex": "\\log(x + {a})",
+      "note": "upraszczam"
+    },
+    {
+      "latex": "\\log x + \\log {a} = \\log x + {k}",
+      "note": "rozdzielam logarytm"
+    },
+    {
+      "latex": "\\text{czyli } \\log(x + {a}) = \\log x + {k}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "\\log(x + {a}) \\quad \\text{(nie da się rozbić)}",
+  "check": {
+    "kind": "expr",
+    "wrong_lhs": "log(x + {a}, 10)",
+    "wrong_rhs": "log(x, 10) + {k}",
+    "correct_rhs": "log(x + {a}, 10)",
+    "probe_values": [
+      1,
+      2,
+      10,
+      100
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K08-1",
+      "required": true,
+      "text": "Suma logarytmów to logarytm iloczynu, a nie logarytm sumy",
+      "keywords": [
+        "iloczyn",
+        "mnożenie",
+        "mnozenie",
+        "razy",
+        "log iloczynu",
+        "nie suma",
+        "nie rozbija",
+        "nie rozdziela"
+      ]
+    },
+    {
+      "id": "K08-2",
+      "required": true,
+      "text": "Kontrprzykład liczbowy: dla konkretnego x obie strony dają różne wyniki",
+      "keywords": [
+        "podstaw",
+        "sprawdź",
+        "sprawdz",
+        "dla x =",
+        "wyjdzie",
+        "różne",
+        "rozne",
+        "nie równa",
+        "nie rowna"
+      ]
+    },
+    {
+      "id": "K08-3",
+      "required": false,
+      "text": "log x + {k} to log(x · {a}), co widać po zamianie {k} na log {a}",
+      "keywords": [
+        "log(x",
+        "x razy",
+        "x \\cdot",
+        "zamień",
+        "zamien"
+      ]
+    }
+  ],
+  "probes": {
+    "K08-1": "Ale przecież log a + log b to się jakoś łączy, nie? To w drugą stronę też powinno działać.",
+    "K08-2": "A sprawdź to na jakiejś liczbie.",
+    "K08-3": "To czym właściwie jest log x + {k}?"
+  },
+  "hint_probe": "Podstaw x = {probe_hint} do linijki 1 i do linijki {display_index}.",
+  "curriculum": "Podstawa programowa: IV.3 (logarytmy); matura rozszerzona."
+}

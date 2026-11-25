@@ -1,0 +1,125 @@
+{
+  "id": "K11",
+  "topic": "Potęgi",
+  "title": "Mnożenie potęg o tej samej podstawie",
+  "false_rule": "Przy mnożeniu potęg o tej samej podstawie wykładniki się mnożą: a^m · a^n = a^(m·n)",
+  "correct_rule": "a^m · a^n = a^(m+n) — przy mnożeniu potęg wykładniki się dodaje",
+  "correct_rule_latex": "a^m \\cdot a^n = a^{m+n}",
+  "kuba_restate": "Aha, czyli przy mnożeniu potęg wykładniki się dodaje, a nie mnoży.",
+  "param_sets": [
+    {
+      "b": 2,
+      "m": 3,
+      "n": 4,
+      "wrong_e": 12,
+      "right_e": 7
+    },
+    {
+      "b": 3,
+      "m": 2,
+      "n": 3,
+      "wrong_e": 6,
+      "right_e": 5
+    },
+    {
+      "b": 2,
+      "m": 2,
+      "n": 5,
+      "wrong_e": 10,
+      "right_e": 7
+    },
+    {
+      "b": 5,
+      "m": 2,
+      "n": 3,
+      "wrong_e": 6,
+      "right_e": 5
+    },
+    {
+      "b": 10,
+      "m": 2,
+      "n": 3,
+      "wrong_e": 6,
+      "right_e": 5
+    }
+  ],
+  "derived": {},
+  "var": "x",
+  "task_latex": "{b}^{m} \\cdot {b}^{n}",
+  "lines": [
+    {
+      "latex": "{b}^{m} \\cdot {b}^{n}",
+      "note": "upraszczam"
+    },
+    {
+      "latex": "{b}^{{m} \\cdot {n}} = {b}^{wrong_e}",
+      "note": "wykładniki mnożę"
+    },
+    {
+      "latex": "\\text{wynik: } {b}^{wrong_e}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "{b}^{{m} + {n}} = {b}^{right_e}",
+  "check": {
+    "kind": "numeric",
+    "wrong_lhs": "{b}**{m} * {b}**{n}",
+    "wrong_rhs": "{b}**{wrong_e}",
+    "correct_rhs": "{b}**{right_e}"
+  },
+  "ideas": [
+    {
+      "id": "K11-1",
+      "required": true,
+      "text": "Przy mnożeniu potęg o tej samej podstawie wykładniki się dodaje",
+      "keywords": [
+        "dodaje",
+        "dodać",
+        "dodac",
+        "suma wykładników",
+        "suma wykladnikow",
+        "plus",
+        "{right_e}",
+        "nie mnoży",
+        "nie mnozy"
+      ]
+    },
+    {
+      "id": "K11-2",
+      "required": true,
+      "text": "Rozpisanie na czynniki pokazuje, ile razy podstawa występuje",
+      "keywords": [
+        "rozpisz",
+        "ile razy",
+        "razy {b}",
+        "{b} \\cdot {b}",
+        "policz czynniki",
+        "{right_e} razy",
+        "sprawdź",
+        "sprawdz",
+        "podstaw"
+      ]
+    },
+    {
+      "id": "K11-3",
+      "required": false,
+      "text": "Mnożenie wykładników dotyczy potęgi potęgi: (a^m)^n = a^(m·n)",
+      "keywords": [
+        "potęga potęgi",
+        "potega potegi",
+        "(",
+        "nawias",
+        "do potęgi",
+        "do potegi"
+      ]
+    }
+  ],
+  "probes": {
+    "K11-1": "Mnożę potęgi, więc mnożę też wykładniki — nie tak to działa?",
+    "K11-2": "A rozpisz mi to, ile tych {b} tam w sumie jest?",
+    "K11-3": "A kiedy w ogóle wykładniki się mnoży?"
+  },
+  "hint_probe": "Rozpisz {b}^{m} \\cdot {b}^{n} jako iloczyn samych {b} i policz czynniki.",
+  "curriculum": "Podstawa programowa: II.5 (potęgi o wykładniku naturalnym); matura podstawowa."
+}

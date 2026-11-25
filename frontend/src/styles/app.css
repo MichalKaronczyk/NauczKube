@@ -1,0 +1,988 @@
+/* Układ ekranów. Kuba pisze atramentem (akcent), uczeń grafitem (ink). */
+
+.screen {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  min-height: 100%;
+}
+
+.banner {
+  background: var(--accent-tint);
+  border-bottom: 1px solid var(--line);
+  padding: var(--s1) var(--s3);
+  font-size: var(--label);
+  display: flex;
+  gap: var(--s2);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-down {
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s2);
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s2);
+}
+
+.topbar-actions {
+  display: flex;
+  gap: var(--s1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topbar-task {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.task-latex {
+  font-size: 20px;
+}
+
+.error-mark {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px dashed var(--ink);
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* --- ekran startowy ----------------------------------------------------- */
+
+.screen-start {
+  justify-content: center;
+  align-items: center;
+}
+
+.start-card {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.start-title {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.start-lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.start-actions {
+  display: flex;
+  gap: var(--s1);
+  flex-wrap: wrap;
+}
+
+.start-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.start-disclaimer {
+  margin: 0;
+}
+
+.start-teacher {
+  align-self: flex-start;
+}
+
+.created-box {
+  padding: var(--s2);
+  background: var(--accent-tint);
+  border-color: var(--accent);
+}
+
+/* --- tematy ------------------------------------------------------------- */
+
+.topics-lead {
+  margin: 0;
+  max-width: 70ch;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-button);
+}
+
+.topics-list {
+  display: grid;
+  gap: var(--s2);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.topic-group {
+  padding: var(--s2);
+}
+
+.topic-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: var(--s1);
+}
+
+.topic-group ul,
+.summary-ideas,
+.teacher-summary ul,
+.ideas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topic-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+.topic-group li:first-child .topic-row {
+  border-top: none;
+}
+
+.topic-row:hover:not(:disabled) .topic-row-name {
+  color: var(--accent);
+}
+
+.topic-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.topic-row-main {
+  display: flex;
+  gap: var(--s1);
+  align-items: baseline;
+}
+
+.topic-row-id {
+  font-size: var(--label);
+  color: var(--muted);
+}
+
+.topic-row-done {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.topic-meter,
+.meter {
+  display: block;
+  height: 4px;
+  background: var(--grid);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.meter {
+  height: 8px;
+}
+
+.topic-meter-fill,
+.meter-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.meter-value {
+  font-size: var(--label);
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.topic-row-curriculum {
+  display: block;
+}
+
+/* --- tablica ------------------------------------------------------------ */
+
+.board-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr);
+  gap: var(--s3);
+  align-items: start;
+  flex: 1;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tool {
+  font: inherit;
+  font-size: var(--label);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-button);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.tool:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tool.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tool:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.toolbar-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.board-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/* kartka w kratkę: kropki siatki co 24 px */
+.board-paper {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--grid) 1px, transparent 1px);
+  background-size: var(--grid-step) var(--grid-step);
+  background-position: 12px 12px;
+  min-height: 420px;
+  padding: var(--s3);
+  overflow: hidden;
+}
+
+.board-surface {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+}
+
+.board-surface[data-tool='marker'] {
+  cursor: cell;
+}
+
+.board-surface[data-tool='eraser'] {
+  cursor: grab;
+}
+
+.board-surface.is-disabled {
+  pointer-events: none;
+}
+
+.board-ink {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ink-pen {
+  fill: var(--ink);
+}
+
+.ink-marker {
+  fill: var(--accent);
+  opacity: 0.18;
+}
+
+/* --- pismo Kuby --------------------------------------------------------- */
+
+.kuba-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.kuba-line {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: baseline;
+  gap: var(--s1);
+  font-family: var(--font-hand);
+  font-size: var(--hand);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 2px 6px;
+  transition: background var(--transition);
+}
+
+.kuba-line.is-clickable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.kuba-line.is-clickable:hover {
+  background: var(--accent-tint);
+}
+
+.kuba-line.is-hidden {
+  visibility: hidden;
+}
+
+/* pismo „pisze się” od lewej do prawej */
+.kuba-line.is-shown .kuba-line-body {
+  animation: write var(--write-duration, 600ms) steps(24, end) both;
+}
+
+@keyframes write {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Pismo Kuby: litery i cyfry w Caveat, ale znaki, których Caveat nie ma
+   (pierwiastki, duże nawiasy, kreski ułamkowe, sumy) zostają w KaTeX. */
+.kuba-line .katex .mord,
+.kuba-line .katex .mbin,
+.kuba-line .katex .mrel,
+.kuba-line .katex .mopen,
+.kuba-line .katex .mclose,
+.kuba-line .katex .mpunct,
+.summary-correct .katex .mord,
+.summary-correct .katex .mbin,
+.summary-correct .katex .mrel,
+.summary-correct .katex .mopen,
+.summary-correct .katex .mclose {
+  font-family: var(--font-hand);
+  font-style: normal;
+}
+
+.kuba-line .katex .sqrt-sign,
+.kuba-line .katex .delimsizing,
+.kuba-line .katex .delimsizinginner,
+.kuba-line .katex .mop,
+.kuba-line .katex .accent-body,
+.kuba-line .katex .overline-line,
+.kuba-line .katex .underline-line,
+.summary-correct .katex .sqrt-sign,
+.summary-correct .katex .delimsizing,
+.summary-correct .katex .mop {
+  font-family: KaTeX_Main, KaTeX_Size1, KaTeX_Size2, serif;
+}
+
+.kuba-line .katex .mord.text,
+.summary-correct .katex .mord.text {
+  font-family: var(--font-hand);
+}
+
+.kuba-line-no {
+  font-family: var(--font-ui);
+  font-size: var(--label);
+  color: var(--muted);
+  text-align: right;
+}
+
+.kuba-line-body {
+  display: block;
+  min-width: 0;
+}
+
+.kuba-line-note {
+  font-family: var(--font-ui);
+  font-size: var(--label);
+  color: var(--muted);
+  margin-left: var(--s2);
+}
+
+.kuba-line.is-marked {
+  background: var(--accent-tint);
+}
+
+.kuba-line.is-highlighted {
+  background: var(--accent-tint);
+}
+
+/* błąd bez czerwieni: przerywana ramka */
+.kuba-line.is-dashed {
+  outline: 1px dashed var(--ink);
+  outline-offset: 2px;
+}
+
+.kuba-line.is-corrected {
+  background: var(--accent-tint);
+}
+
+/* --- rozmowa ------------------------------------------------------------ */
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  padding: var(--s2);
+  min-width: 0;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.conversation-log {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.bubble {
+  border-radius: var(--radius-panel);
+  padding: 10px 12px;
+  font-size: var(--text);
+}
+
+.bubble p {
+  margin: 0;
+}
+
+.bubble-kuba {
+  background: var(--accent-tint);
+  color: var(--ink);
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--s1);
+  align-items: start;
+}
+
+.bubble-avatar {
+  color: var(--accent);
+  display: block;
+}
+
+.bubble-student {
+  border: 1px solid var(--line);
+  margin-left: var(--s3);
+}
+
+.bubble-hint {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.bubble-title {
+  display: block;
+  font-size: var(--label);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: blink 1.2s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.ideas {
+  border-top: 1px solid var(--line);
+  padding-top: var(--s1);
+}
+
+.ideas li,
+.summary-ideas li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: var(--s1);
+  align-items: start;
+  padding: 4px 0;
+  color: var(--muted);
+  font-size: var(--label);
+}
+
+.ideas li.is-covered,
+.summary-ideas li.is-covered {
+  color: var(--ink);
+}
+
+.ideas li.is-covered svg,
+.summary-ideas li.is-covered svg {
+  color: var(--accent);
+}
+
+.summary-ideas li {
+  font-size: var(--text);
+}
+
+.composer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  border-top: 1px solid var(--line);
+  padding-top: var(--s2);
+}
+
+.composer-actions {
+  display: flex;
+  gap: var(--s1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.voice {
+  display: flex;
+  gap: var(--s1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.voice .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- podsumowanie ------------------------------------------------------- */
+
+.summary-grid {
+  display: grid;
+  gap: var(--s2);
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.summary-block {
+  padding: var(--s2);
+}
+
+.summary-h {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: var(--s1);
+}
+
+.summary-kuba {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--s1);
+  align-items: start;
+  color: var(--accent);
+  margin-bottom: var(--s2);
+}
+
+.kuba-quote .katex .mord,
+.kuba-quote .katex .mbin,
+.kuba-quote .katex .mrel,
+.kuba-quote .katex .mopen,
+.kuba-quote .katex .mclose {
+  font-family: var(--font-hand);
+}
+
+.kuba-quote {
+  font-family: var(--font-hand);
+  font-size: 24px;
+  color: var(--accent);
+  margin: 0;
+}
+
+.summary-correct {
+  font-family: var(--font-hand);
+  font-size: var(--hand);
+  color: var(--accent);
+  background: var(--accent-tint);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 0;
+}
+
+.summary-stats {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.summary-stats div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+  font-size: var(--label);
+}
+
+.summary-stats dt {
+  color: var(--muted);
+}
+
+.summary-stats dd {
+  margin: 0;
+}
+
+.summary-actions {
+  display: flex;
+  gap: var(--s1);
+  flex-wrap: wrap;
+}
+
+/* --- dobrostan ucznia --------------------------------------------------- */
+
+.screen-wellbeing {
+  justify-content: center;
+  align-items: center;
+}
+
+.wellbeing-card {
+  max-width: 520px;
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/* --- panel nauczyciela -------------------------------------------------- */
+
+.heatmap-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+}
+
+.heatmap {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--label);
+}
+
+.heatmap th,
+.heatmap td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.heatmap thead th {
+  font-weight: 600;
+  color: var(--muted);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+.heatmap tbody th {
+  text-align: left;
+  font-weight: 400;
+}
+
+.heatmap td {
+  min-width: 44px;
+  height: 34px;
+}
+
+.heatmap td.is-empty {
+  background-image: linear-gradient(
+    135deg,
+    transparent 46%,
+    var(--line) 46%,
+    var(--line) 54%,
+    transparent 54%
+  );
+}
+
+.cell-check {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.teacher-summary {
+  padding: var(--s2);
+}
+
+.teacher-summary li {
+  padding: 5px 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--label);
+}
+
+.teacher-summary li:first-child {
+  border-top: none;
+}
+
+.teacher-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* --- tablet w pionie: rozmowa pod tablicą ------------------------------- */
+
+@media (max-width: 1023px) {
+  .board-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .board-paper {
+    min-height: 340px;
+  }
+
+  .conversation-log {
+    max-height: 34vh;
+  }
+
+  .screen {
+    padding: var(--s2);
+  }
+}
+
+@media (max-width: 767px) {
+  .kuba-line {
+    font-size: 24px;
+  }
+}
+
+/* --- kod programu (tryb informatyczny) ---------------------------------- */
+/* Kod nie jest pismem odręcznym: stała szerokość znaku, zachowane wcięcia. */
+
+.kuba-line.is-code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 16px;
+  align-items: start;
+}
+
+.kuba-line.is-code .kuba-line-body {
+  animation: none;
+}
+
+.kuba-code {
+  display: block;
+  white-space: pre-wrap;
+  tab-size: 4;
+  line-height: 1.55;
+  font-family: inherit;
+}
+
+.kuba-line.is-code .kuba-line-note {
+  display: block;
+  margin: 4px 0 0;
+  font-family: var(--font-ui);
+}
+
+/* --- pasek kroków ------------------------------------------------------- */
+
+.stepbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.stepbar-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.stepbar-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--label);
+  color: var(--muted);
+}
+
+.stepbar-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 11px;
+  flex: none;
+}
+
+.stepbar-step.is-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.stepbar-step.is-active .stepbar-no {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stepbar-step.is-done .stepbar-no {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stepbar-instruction {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-button);
+  background: var(--bg);
+  font-size: var(--text);
+}
+
+.stepbar-help {
+  margin-left: var(--s1);
+}
+
+/* --- karta „jak to działa” ---------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s3);
+  z-index: 50;
+}
+
+.tutorial {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  border-color: var(--ink);
+}
+
+.tutorial-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.tutorial-lead {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tutorial-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.tutorial-steps li {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: var(--s1);
+  align-items: start;
+}
+
+.tutorial-step-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: var(--label);
+  font-weight: 600;
+}
+
+.tutorial-hint {
+  margin: 0;
+  padding-top: var(--s1);
+  border-top: 1px solid var(--line);
+}
+
+.tutorial-actions {
+  display: flex;
+  gap: var(--s2);
+  align-items: center;
+  flex-wrap: wrap;
+}

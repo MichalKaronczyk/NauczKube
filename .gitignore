@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.spec.bak
+
+# baza i dane lokalne
+*.db
+*.db-journal
+backend/naucz_kube.db
+backend/smoke.db
+
+# sekrety
+.env
+.env.local
+
+# frontend
+node_modules/
+backend/static/
+frontend/test-results/
+frontend/playwright-report/
+frontend/.vite/
+
+# system
+.DS_Store
+Thumbs.db
+
+# film i paczki zgłoszeniowe (nie trzymamy ich w repo)
+*.mp4
+*.avi
+*.mov
+zgloszenie/
+dist-release/
+*.zip

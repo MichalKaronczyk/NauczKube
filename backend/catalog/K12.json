@@ -1,0 +1,121 @@
+{
+  "id": "K12",
+  "topic": "Informatyka: pętle i indeksy",
+  "title": "range(1, n) i off-by-one",
+  "false_rule": "range(1, n) przechodzi przez całą listę, bo elementy liczymy od pierwszego",
+  "correct_rule": "Indeksy listy zaczynają się od 0, a range(1, n) pomija element o indeksie 0",
+  "correct_rule_latex": "\\texttt{range(0, len(xs))}",
+  "kuba_restate": "Aha, czyli lista zaczyna się od indeksu zero, więc range musi startować od zera.",
+  "param_sets": [
+    {
+      "xs": "[4, 7, 2, 9]",
+      "total": 22,
+      "partial": 18,
+      "first": 4,
+      "n": 4
+    },
+    {
+      "xs": "[10, 1, 1]",
+      "total": 12,
+      "partial": 2,
+      "first": 10,
+      "n": 3
+    },
+    {
+      "xs": "[3, 3, 3, 3, 3]",
+      "total": 15,
+      "partial": 12,
+      "first": 3,
+      "n": 5
+    },
+    {
+      "xs": "[8, 0, 5, 1]",
+      "total": 14,
+      "partial": 6,
+      "first": 8,
+      "n": 4
+    }
+  ],
+  "derived": {},
+  "var": "x",
+  "language": "python",
+  "task_latex": "\\text{suma elementów listy } {xs}",
+  "lines": [
+    {
+      "latex": "\\texttt{xs = {xs}}",
+      "note": "zadanie: policz sumę",
+      "code": "xs = {xs}"
+    },
+    {
+      "latex": "\\texttt{for i in range(1, len(xs)): s += xs[i]}",
+      "note": "pętla po całej liście",
+      "code": "s = 0\nfor i in range(1, len(xs)):\n    s += xs[i]"
+    },
+    {
+      "latex": "\\texttt{print(s)} \\ \\rightarrow \\ {partial}",
+      "note": "",
+      "code": "print(s)  # {partial}"
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "\\texttt{for i in range(0, len(xs)): s += xs[i]}",
+  "check": {
+    "kind": "numeric",
+    "wrong_lhs": "{total}",
+    "wrong_rhs": "{partial}",
+    "correct_rhs": "{total}"
+  },
+  "ideas": [
+    {
+      "id": "K12-1",
+      "required": true,
+      "text": "Indeksy listy zaczynają się od 0, więc range(1, ...) pomija pierwszy element",
+      "keywords": [
+        "od zera",
+        "od 0",
+        "indeks 0",
+        "pomija",
+        "pierwszy element",
+        "zaczyna się od zera",
+        "zaczyna sie od zera",
+        "xs[0]"
+      ]
+    },
+    {
+      "id": "K12-2",
+      "required": true,
+      "text": "Konkretny rachunek: brakuje wartości pierwszego elementu",
+      "keywords": [
+        "{first}",
+        "{partial}",
+        "{total}",
+        "brakuje",
+        "mniej",
+        "o jeden element",
+        "nie dolicza",
+        "sprawdź",
+        "sprawdz"
+      ]
+    },
+    {
+      "id": "K12-3",
+      "required": false,
+      "text": "range(a, b) nie obejmuje końca b — przedział jest prawostronnie otwarty",
+      "keywords": [
+        "nie obejmuje",
+        "bez końca",
+        "bez konca",
+        "prawostronnie",
+        "do b - 1",
+        "wyklucza"
+      ]
+    }
+  ],
+  "probes": {
+    "K12-1": "No ale pierwszy element to przecież numer 1, nie?",
+    "K12-2": "A ile konkretnie mi wyszło za mało?",
+    "K12-3": "A co dokładnie robi range z drugim argumentem?"
+  },
+  "hint_probe": "Wypisz, jakie wartości przyjmuje i w linijce {display_index}, i sprawdź, który element listy nie został dodany.",
+  "curriculum": "Podstawa programowa informatyki: II.3 (iteracja, indeksowanie struktur danych)."
+}

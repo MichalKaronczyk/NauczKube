@@ -1,0 +1,102 @@
+{
+  "id": "K05",
+  "topic": "Wyrażenia algebraiczne",
+  "title": "Skracanie składników w ułamku",
+  "false_rule": "W ułamku można skrócić dowolne jednakowe liczby, także składniki sumy",
+  "correct_rule": "Skracać można tylko czynniki całego licznika i mianownika, nie składniki sumy",
+  "correct_rule_latex": "\\frac{a + b}{c} = \\frac{a}{c} + \\frac{b}{c}",
+  "kuba_restate": "Aha, czyli skracać mogę tylko czynniki, a nie pojedyncze składniki sumy.",
+  "params": {
+    "a": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "derived": {},
+  "var": "x",
+  "task_latex": "\\frac{x + {a}}{{a}}",
+  "lines": [
+    {
+      "latex": "\\frac{x + {a}}{{a}}",
+      "note": "upraszczam"
+    },
+    {
+      "latex": "x",
+      "note": "skracam {a} z {a}"
+    },
+    {
+      "latex": "\\text{czyli wynik to } x",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "\\frac{x}{{a}} + 1",
+  "check": {
+    "kind": "expr",
+    "wrong_lhs": "(x + {a})/{a}",
+    "wrong_rhs": "x",
+    "correct_rhs": "x/{a} + 1",
+    "probe_values": [
+      1,
+      2,
+      3,
+      6
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K05-1",
+      "required": true,
+      "text": "Skraca się tylko czynniki (coś, co mnoży cały licznik), a nie składniki sumy",
+      "keywords": [
+        "czynnik",
+        "tylko mnożenie",
+        "składnik",
+        "skladnik",
+        "nie suma",
+        "cały licznik",
+        "caly licznik",
+        "nie wolno skracać",
+        "nie mozna skracac"
+      ]
+    },
+    {
+      "id": "K05-2",
+      "required": true,
+      "text": "Kontrprzykład liczbowy albo rozbicie ułamka na dwa",
+      "keywords": [
+        "podstaw",
+        "sprawdź",
+        "dla x =",
+        "rozbij",
+        "na dwa ułamki",
+        "na dwa ulamki",
+        "wyjdzie",
+        "nie wychodzi",
+        "+ 1"
+      ]
+    },
+    {
+      "id": "K05-3",
+      "required": false,
+      "text": "Dzielenie sumy przez liczbę to dzielenie każdego składnika osobno",
+      "keywords": [
+        "każdy składnik",
+        "kazdy skladnik",
+        "osobno",
+        "po kolei",
+        "rozdzielnie"
+      ]
+    }
+  ],
+  "probes": {
+    "K05-1": "No ale te same liczby na górze i na dole — czemu nie można ich skreślić?",
+    "K05-2": "A sprawdź to na jakiejś liczbie, może faktycznie coś mi nie pasuje.",
+    "K05-3": "To jak mam dzielić sumę przez liczbę?"
+  },
+  "hint_probe": "Podstaw x = {probe_hint} do linijki 1 i do linijki {display_index}.",
+  "curriculum": "Podstawa programowa: III.2 (przekształcanie wyrażeń algebraicznych)."
+}

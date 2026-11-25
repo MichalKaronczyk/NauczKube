@@ -1,0 +1,105 @@
+{
+  "id": "K01",
+  "topic": "Wzory skróconego mnożenia",
+  "title": "Kwadrat sumy",
+  "false_rule": "Kwadrat sumy to suma kwadratów: (a + b)^2 = a^2 + b^2",
+  "correct_rule": "(a + b)^2 = a^2 + 2ab + b^2",
+  "correct_rule_latex": "(a + b)^2 = a^2 + 2ab + b^2",
+  "kuba_restate": "Aha, czyli przy kwadracie sumy trzeba jeszcze dopisać podwojony iloczyn.",
+  "params": {
+    "a": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "derived": {
+    "a2": "a**2",
+    "two_a": "2*a"
+  },
+  "var": "x",
+  "task_latex": "(x + {a})^2 = x^2 + {a2}",
+  "lines": [
+    {
+      "latex": "(x + {a})^2 = x^2 + {a2}",
+      "note": "zadanie"
+    },
+    {
+      "latex": "x^2 + {a2} = x^2 + {a2}",
+      "note": "rozwijam lewą stronę"
+    },
+    {
+      "latex": "0 = 0",
+      "note": "odejmuję to samo od obu stron"
+    },
+    {
+      "latex": "\\text{każde } x \\text{ jest rozwiązaniem}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "x^2 + {two_a}x + {a2} = x^2 + {a2}",
+  "check": {
+    "kind": "expr",
+    "wrong_lhs": "(x + {a})**2",
+    "wrong_rhs": "x**2 + {a2}",
+    "correct_rhs": "x**2 + {two_a}*x + {a2}"
+  },
+  "ideas": [
+    {
+      "id": "K01-1",
+      "required": true,
+      "text": "Brakuje wyrazu 2ab (podwojonego iloczynu)",
+      "keywords": [
+        "2ab",
+        "2·a·b",
+        "podwojony iloczyn",
+        "2 razy",
+        "2x",
+        "brakuje wyrazu",
+        "srodkowy wyraz",
+        "środkowy wyraz",
+        "2*x"
+      ]
+    },
+    {
+      "id": "K01-2",
+      "required": true,
+      "text": "Kontrprzykład liczbowy albo rozpisanie (a+b)(a+b)",
+      "keywords": [
+        "podstaw",
+        "sprawdź dla",
+        "dla x =",
+        "x=1",
+        "x = 1",
+        "wyjdzie",
+        "nawias razy nawias",
+        "(x+",
+        "pomnóż",
+        "pomnozyc",
+        "rozpisz"
+      ]
+    },
+    {
+      "id": "K01-3",
+      "required": false,
+      "text": "Geometrycznie: kwadrat o boku a+b dzieli się na cztery części",
+      "keywords": [
+        "kwadrat o boku",
+        "pole",
+        "geometrycznie",
+        "cztery części",
+        "prostokąt"
+      ]
+    }
+  ],
+  "probes": {
+    "K01-1": "A jak pomnożę (x + {a}) razy (x + {a}), to ile mi wyjdzie wyrazów?",
+    "K01-2": "Serio? A jak to sprawdzić na zwykłych liczbach?",
+    "K01-3": "A da się to jakoś narysować?"
+  },
+  "hint_probe": "Podstaw x = 1 po obu stronach linijki {display_index} i porównaj wyniki.",
+  "curriculum": "Podstawa programowa: III.2 (wyrażenia algebraiczne, wzory skróconego mnożenia); matura podstawowa."
+}

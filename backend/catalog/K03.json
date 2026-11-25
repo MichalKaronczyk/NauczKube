@@ -1,0 +1,102 @@
+{
+  "id": "K03",
+  "topic": "Równania kwadratowe",
+  "title": "Dzielenie przez niewiadomą",
+  "false_rule": "Obie strony równania zawsze można podzielić przez niewiadomą x",
+  "correct_rule": "Nie wolno dzielić przez x, bo x może być zerem — równanie rozkładamy na czynniki",
+  "correct_rule_latex": "x^2 = ax \\ \\Rightarrow \\ x(x - a) = 0",
+  "kuba_restate": "Aha, czyli nie mogę dzielić przez x, bo x może być zerem i gubię rozwiązanie.",
+  "params": {
+    "a": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "derived": {},
+  "var": "x",
+  "task_latex": "x^2 = {a}x",
+  "lines": [
+    {
+      "latex": "x^2 = {a}x",
+      "note": "zadanie"
+    },
+    {
+      "latex": "x = {a}",
+      "note": "dzielę obie strony przez x"
+    },
+    {
+      "latex": "\\text{jedno rozwiązanie: } x = {a}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "x(x - {a}) = 0",
+  "check": {
+    "kind": "solset",
+    "relation": "x**2 - {a}*x",
+    "wrong_solutions": [
+      "{a}"
+    ],
+    "probe_values": [
+      0,
+      1,
+      "{a}"
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K03-1",
+      "required": true,
+      "text": "x może być równe 0, a przez zero nie wolno dzielić",
+      "keywords": [
+        "nie wolno dzielić",
+        "przez zero",
+        "x moze byc 0",
+        "x może być 0",
+        "x = 0 też",
+        "dzielenie przez zero",
+        "x bywa zerem"
+      ]
+    },
+    {
+      "id": "K03-2",
+      "required": true,
+      "text": "Przy dzieleniu przez x ginie rozwiązanie x = 0",
+      "keywords": [
+        "gubisz",
+        "ginie",
+        "tracisz",
+        "zgubiłeś",
+        "zgubiles",
+        "drugie rozwiązanie",
+        "x = 0 jest rozwiązaniem",
+        "x=0 też pasuje",
+        "dwa rozwiązania"
+      ]
+    },
+    {
+      "id": "K03-3",
+      "required": false,
+      "text": "Poprawna droga: przenieść wszystko na jedną stronę i wyłączyć x przed nawias",
+      "keywords": [
+        "przed nawias",
+        "wyłącz",
+        "wylacz",
+        "czynniki",
+        "iloczyn",
+        "rozkład",
+        "x(x -"
+      ]
+    }
+  ],
+  "probes": {
+    "K03-1": "No ale x to jakaś liczba, dzielenie zawsze przechodzi, nie?",
+    "K03-2": "A niby jakie rozwiązanie mi uciekło?",
+    "K03-3": "To jak inaczej miałem to zrobić?"
+  },
+  "hint_probe": "Podstaw x = 0 do linijki 1. Czy linijka {display_index} to dopuszcza?",
+  "curriculum": "Podstawa programowa: III.4 (równania); matura podstawowa i rozszerzona."
+}

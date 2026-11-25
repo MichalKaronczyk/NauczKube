@@ -1,0 +1,103 @@
+{
+  "id": "K04",
+  "topic": "Pierwiastki",
+  "title": "Pierwiastek z sumy",
+  "false_rule": "Pierwiastek z sumy to suma pierwiastków: sqrt(a + b) = sqrt(a) + sqrt(b)",
+  "correct_rule": "Pierwiastek rozdziela się tylko na iloczyn i iloraz, nigdy na sumę",
+  "correct_rule_latex": "\\sqrt{a + b} \\neq \\sqrt{a} + \\sqrt{b}",
+  "kuba_restate": "Aha, czyli pierwiastek rozdziela się tylko przy mnożeniu, nie przy dodawaniu.",
+  "params": {
+    "a": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "derived": {
+    "a2": "a**2"
+  },
+  "var": "x",
+  "task_latex": "\\sqrt{x^2 + {a2}}",
+  "lines": [
+    {
+      "latex": "\\sqrt{x^2 + {a2}}",
+      "note": "upraszczam"
+    },
+    {
+      "latex": "\\sqrt{x^2} + \\sqrt{{a2}}",
+      "note": "rozdzielam pierwiastek"
+    },
+    {
+      "latex": "x + {a}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "\\sqrt{x^2 + {a2}}",
+  "check": {
+    "kind": "expr",
+    "wrong_lhs": "sqrt(x**2 + {a2})",
+    "wrong_rhs": "x + {a}",
+    "correct_rhs": "sqrt(x**2 + {a2})",
+    "probe_values": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K04-1",
+      "required": true,
+      "text": "Pierwiastek nie rozdziela się na sumę — tylko na iloczyn i iloraz",
+      "keywords": [
+        "nie rozdziela",
+        "nie można rozdzielić",
+        "nie wolno rozdzielać",
+        "tylko iloczyn",
+        "tylko mnożenie",
+        "nie dla sumy",
+        "nie rozbija"
+      ]
+    },
+    {
+      "id": "K04-2",
+      "required": true,
+      "text": "Kontrprzykład liczbowy, np. sqrt(9 + 16) = 5, a nie 3 + 4 = 7",
+      "keywords": [
+        "podstaw",
+        "sprawdź",
+        "dla x =",
+        "wyjdzie",
+        "9 + 16",
+        "25",
+        "nie równa",
+        "nie rowna",
+        "różne",
+        "rozne"
+      ]
+    },
+    {
+      "id": "K04-3",
+      "required": false,
+      "text": "Po podniesieniu obu stron do kwadratu widać brakujący wyraz 2ab",
+      "keywords": [
+        "do kwadratu",
+        "2ab",
+        "podnieś",
+        "podnies",
+        "kwadrat obu stron"
+      ]
+    }
+  ],
+  "probes": {
+    "K04-1": "Ale przy mnożeniu pierwiastek się rozdziela, więc przy dodawaniu chyba też?",
+    "K04-2": "A pokaż na liczbach, że mi nie wychodzi.",
+    "K04-3": "A jak podniosę obie strony do kwadratu, to co wyjdzie?"
+  },
+  "hint_probe": "Podstaw x = {probe_hint} do linijki 1 i do linijki {display_index}.",
+  "curriculum": "Podstawa programowa: II.5 (potęgi i pierwiastki); matura podstawowa."
+}

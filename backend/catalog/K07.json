@@ -1,0 +1,95 @@
+{
+  "id": "K07",
+  "topic": "Potęgi",
+  "title": "Kwadrat liczby ujemnej",
+  "false_rule": "Kwadrat liczby ujemnej jest ujemny, bo minus zostaje",
+  "correct_rule": "Kwadrat każdej liczby rzeczywistej jest nieujemny: (-a)^2 = a^2",
+  "correct_rule_latex": "(-a)^2 = a^2",
+  "kuba_restate": "Aha, czyli kwadrat liczby ujemnej wychodzi dodatni i muszę pamiętać o nawiasie.",
+  "params": {
+    "a": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "derived": {
+    "a2": "a**2",
+    "neg_a2": "-a**2",
+    "sum_wrong": "-a**2 + 1",
+    "sum_right": "a**2 + 1"
+  },
+  "var": "x",
+  "task_latex": "f(x) = x^2 + 1, \\quad f(-{a}) = ?",
+  "lines": [
+    {
+      "latex": "f(x) = x^2 + 1",
+      "note": "zadanie"
+    },
+    {
+      "latex": "f(-{a}) = -{a}^2 + 1 = {neg_a2} + 1",
+      "note": "podstawiam x = -{a}"
+    },
+    {
+      "latex": "f(-{a}) = {sum_wrong}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "f(-{a}) = (-{a})^2 + 1 = {a2} + 1",
+  "check": {
+    "kind": "numeric",
+    "wrong_lhs": "(-{a})**2 + 1",
+    "wrong_rhs": "{sum_wrong}",
+    "correct_rhs": "{sum_right}"
+  },
+  "ideas": [
+    {
+      "id": "K07-1",
+      "required": true,
+      "text": "(-a)^2 = a^2, bo minus razy minus daje plus",
+      "keywords": [
+        "minus razy minus",
+        "plus",
+        "dodatni",
+        "nieujemn",
+        "kwadrat jest dodatni",
+        "zawsze dodatni"
+      ]
+    },
+    {
+      "id": "K07-2",
+      "required": true,
+      "text": "Przy podstawianiu liczby ujemnej trzeba ją wziąć w nawias",
+      "keywords": [
+        "nawias",
+        "w nawiasie",
+        "-x^2 to nie to samo",
+        "nawiasy",
+        "trzeba nawias"
+      ]
+    },
+    {
+      "id": "K07-3",
+      "required": false,
+      "text": "-a^2 i (-a)^2 to dwa różne wyrażenia — decyduje kolejność działań",
+      "keywords": [
+        "kolejność działań",
+        "kolejnosc dzialan",
+        "najpierw potęga",
+        "najpierw potega",
+        "różne wyrażenia",
+        "rozne wyrazenia"
+      ]
+    }
+  ],
+  "probes": {
+    "K07-1": "No ale podstawiam minus {a}, więc minus przecież zostaje?",
+    "K07-2": "A gdzie ja miałem postawić jakieś nawiasy?",
+    "K07-3": "To -{a}^2 i (-{a})^2 to nie to samo?"
+  },
+  "hint_probe": "Policz samo (-{a}) \\cdot (-{a}) i porównaj z linijką {display_index}.",
+  "curriculum": "Podstawa programowa: II.5 (potęgi), I.1 (kolejność działań)."
+}

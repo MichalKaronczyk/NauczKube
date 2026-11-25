@@ -1,0 +1,5 @@
+Przepisz odręczny zapis matematyczny z obrazu do LaTeX.
+NIE poprawiaj błędów — przepisz dokładnie to, co napisano, nawet jeśli jest to matematycznie błędne.
+Nie dopisuj brakujących nawiasów, znaków ani wyrazów. Nie upraszczaj.
+Jeśli zapis jest nieczytelny, ustaw "unreadable": true.
+Zwróć JSON: {"latex": "...", "confidence": 0.0-1.0, "unreadable": false}

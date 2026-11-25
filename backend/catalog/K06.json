@@ -1,0 +1,106 @@
+{
+  "id": "K06",
+  "topic": "Równania kwadratowe",
+  "title": "Jedno rozwiązanie równania x² = a",
+  "false_rule": "Równanie x^2 = a ma dokładnie jedno rozwiązanie: x = sqrt(a)",
+  "correct_rule": "Równanie x^2 = a dla a > 0 ma dwa rozwiązania: x = sqrt(a) i x = -sqrt(a)",
+  "correct_rule_latex": "x^2 = a \\ \\Rightarrow \\ x = \\sqrt{a} \\ \\text{lub} \\ x = -\\sqrt{a}",
+  "kuba_restate": "Aha, czyli po spierwiastkowaniu pasują dwie liczby: dodatnia i ujemna.",
+  "params": {
+    "a": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "derived": {
+    "a2": "a**2"
+  },
+  "var": "x",
+  "task_latex": "x^2 = {a2}",
+  "lines": [
+    {
+      "latex": "x^2 = {a2}",
+      "note": "zadanie"
+    },
+    {
+      "latex": "x = \\sqrt{{a2}} = {a}",
+      "note": "pierwiastkuję obie strony"
+    },
+    {
+      "latex": "\\text{rozwiązanie: } x = {a}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "x = {a} \\ \\text{lub} \\ x = -{a}",
+  "check": {
+    "kind": "solset",
+    "relation": "x**2 - {a2}",
+    "wrong_solutions": [
+      "{a}"
+    ],
+    "probe_values": [
+      "{a}",
+      "-{a}"
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K06-1",
+      "required": true,
+      "text": "Istnieje drugie rozwiązanie: x = -sqrt(a), bo kwadrat liczby ujemnej też jest dodatni",
+      "keywords": [
+        "drugie rozwiązanie",
+        "drugie rozwiazanie",
+        "minus",
+        "ujemn",
+        "-5",
+        "-6",
+        "-7",
+        "-8",
+        "-9",
+        "dwa rozwiązania",
+        "dwa rozwiazania",
+        "plus minus",
+        "±"
+      ]
+    },
+    {
+      "id": "K06-2",
+      "required": true,
+      "text": "Sprawdzenie: podstawiona liczba ujemna też spełnia równanie",
+      "keywords": [
+        "podstaw",
+        "sprawdź",
+        "sprawdz",
+        "do kwadratu",
+        "też wychodzi",
+        "tez wychodzi",
+        "spełnia",
+        "spelnia"
+      ]
+    },
+    {
+      "id": "K06-3",
+      "required": false,
+      "text": "Poprawnie: sqrt(x^2) = |x|, więc |x| = a daje dwa przypadki",
+      "keywords": [
+        "wartość bezwzględna",
+        "wartosc bezwzgledna",
+        "moduł",
+        "modul",
+        "|x|"
+      ]
+    }
+  ],
+  "probes": {
+    "K06-1": "Ale pierwiastek z {a2} to {a}, jedna liczba. Skąd drugie rozwiązanie?",
+    "K06-2": "A sprawdź, czy ta druga liczba faktycznie pasuje.",
+    "K06-3": "A co ma do tego wartość bezwzględna?"
+  },
+  "hint_probe": "Podstaw x = -{a} do linijki 1. Czy linijka {display_index} o tym mówi?",
+  "curriculum": "Podstawa programowa: III.4 (równania kwadratowe); matura podstawowa."
+}

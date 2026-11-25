@@ -1,0 +1,105 @@
+{
+  "id": "K10",
+  "topic": "Wyrażenia wymierne",
+  "title": "Dziedzina równania z ułamkiem",
+  "false_rule": "Przy równaniu z ułamkiem nie trzeba sprawdzać dziedziny — wystarczy przyrównać licznik do zera",
+  "correct_rule": "Mianownik musi być różny od zera, więc rozwiązania zerujące mianownik odrzucamy",
+  "correct_rule_latex": "\\frac{P(x)}{Q(x)} = 0 \\iff P(x) = 0 \\ \\text{oraz} \\ Q(x) \\neq 0",
+  "kuba_restate": "Aha, czyli najpierw muszę sprawdzić, dla jakich x mianownik nie jest zerem.",
+  "params": {
+    "a": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "derived": {
+    "a2": "a**2"
+  },
+  "var": "x",
+  "task_latex": "\\frac{x^2 - {a2}}{x - {a}} = 0",
+  "lines": [
+    {
+      "latex": "\\frac{x^2 - {a2}}{x - {a}} = 0",
+      "note": "zadanie"
+    },
+    {
+      "latex": "x^2 - {a2} = 0 \\Rightarrow x = {a} \\ \\text{lub} \\ x = -{a}",
+      "note": "licznik równy zero"
+    },
+    {
+      "latex": "\\text{rozwiązania: } x = {a}, \\ x = -{a}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "x = -{a} \\quad (x = {a} \\ \\text{odpada, bo mianownik} = 0)",
+  "check": {
+    "kind": "solset",
+    "relation": "(x**2 - {a2})/(x - {a})",
+    "wrong_solutions": [
+      "{a}",
+      "-{a}"
+    ],
+    "probe_values": [
+      "{a}",
+      "-{a}"
+    ]
+  },
+  "ideas": [
+    {
+      "id": "K10-1",
+      "required": true,
+      "text": "Mianownik nie może być zerem, więc x = a jest wykluczone z dziedziny",
+      "keywords": [
+        "mianownik",
+        "dziedzina",
+        "nie może być zerem",
+        "nie moze byc zerem",
+        "zero w mianowniku",
+        "wykluczone",
+        "założenie",
+        "zalozenie",
+        "odpada"
+      ]
+    },
+    {
+      "id": "K10-2",
+      "required": true,
+      "text": "Po podstawieniu x = a wychodzi dzielenie przez zero, więc to nie jest rozwiązanie",
+      "keywords": [
+        "podstaw",
+        "dzielenie przez zero",
+        "0/0",
+        "nie wolno",
+        "nie ma sensu",
+        "nieokreślone",
+        "nieokreslone",
+        "sprawdź",
+        "sprawdz"
+      ]
+    },
+    {
+      "id": "K10-3",
+      "required": false,
+      "text": "Po skróceniu zostaje x + a, ale dziedzina dalej wyklucza x = a",
+      "keywords": [
+        "skrócić",
+        "skrocic",
+        "po skróceniu",
+        "po skroceniu",
+        "x + {a}",
+        "dalej wyklucza"
+      ]
+    }
+  ],
+  "probes": {
+    "K10-1": "No ale licznik się zeruje dla obu, to oba są rozwiązaniami, nie?",
+    "K10-2": "A co się stanie, jak podstawię x = {a}?",
+    "K10-3": "A jak skrócę ułamek, to problem znika?"
+  },
+  "hint_probe": "Podstaw x = {a} do linijki 1. Co wychodzi w mianowniku?",
+  "curriculum": "Podstawa programowa: III.3 (wyrażenia wymierne, dziedzina); matura rozszerzona."
+}

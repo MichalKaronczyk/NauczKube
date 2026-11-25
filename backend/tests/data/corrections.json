@@ -1,0 +1,501 @@
+{
+  "description": "50 ręcznie przygotowanych poprawek (25 poprawnych, 25 błędnych). Weryfikator SymPy musi zgodzić się ze wszystkimi.",
+  "cases": [
+    {
+      "id": "K01",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "two_a": 6
+      },
+      "text": "x^2 + 6x + 9",
+      "accepted": true
+    },
+    {
+      "id": "K01",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "two_a": 6
+      },
+      "text": "(x + 3)^2 = x^2 + 6x + 9",
+      "accepted": true
+    },
+    {
+      "id": "K01",
+      "params": {
+        "a": 5,
+        "a2": 25,
+        "two_a": 10
+      },
+      "text": "x^2 + 10x + 25",
+      "accepted": true
+    },
+    {
+      "id": "K01",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "two_a": 6
+      },
+      "text": "x^2 + 9",
+      "accepted": false
+    },
+    {
+      "id": "K01",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "two_a": 6
+      },
+      "text": "x^2 + 3x + 9",
+      "accepted": false
+    },
+    {
+      "id": "K01",
+      "params": {
+        "a": 5,
+        "a2": 25,
+        "two_a": 10
+      },
+      "text": "x^2 + 5x + 25",
+      "accepted": false
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 4,
+        "a2": 16
+      },
+      "text": "\\sqrt{x^2 + 16}",
+      "accepted": true
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 4,
+        "a2": 16
+      },
+      "text": "sqrt(x^2+16)",
+      "accepted": true
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 3,
+        "a2": 9
+      },
+      "text": "\\sqrt{x^2 + 9}",
+      "accepted": true
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 4,
+        "a2": 16
+      },
+      "text": "x + 4",
+      "accepted": false
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 4,
+        "a2": 16
+      },
+      "text": "\\sqrt{x^2} + 4",
+      "accepted": false
+    },
+    {
+      "id": "K04",
+      "params": {
+        "a": 3,
+        "a2": 9
+      },
+      "text": "x + 3",
+      "accepted": false
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "x/6 + 1",
+      "accepted": true
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "\\frac{x}{6} + 1",
+      "accepted": true
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 4
+      },
+      "text": "x/4 + 1",
+      "accepted": true
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "(x + 6)/6 = x/6 + 1",
+      "accepted": true
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "x",
+      "accepted": false
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "x + 1",
+      "accepted": false
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 6
+      },
+      "text": "x/6",
+      "accepted": false
+    },
+    {
+      "id": "K05",
+      "params": {
+        "a": 4
+      },
+      "text": "x + 4",
+      "accepted": false
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "neg_a2": -9,
+        "sum_wrong": -8,
+        "sum_right": 10
+      },
+      "text": "10",
+      "accepted": true
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "neg_a2": -9,
+        "sum_wrong": -8,
+        "sum_right": 10
+      },
+      "text": "(-3)^2 + 1 = 10",
+      "accepted": true
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 5,
+        "a2": 25,
+        "neg_a2": -25,
+        "sum_wrong": -24,
+        "sum_right": 26
+      },
+      "text": "26",
+      "accepted": true
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "neg_a2": -9,
+        "sum_wrong": -8,
+        "sum_right": 10
+      },
+      "text": "-8",
+      "accepted": false
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 3,
+        "a2": 9,
+        "neg_a2": -9,
+        "sum_wrong": -8,
+        "sum_right": 10
+      },
+      "text": "9",
+      "accepted": false
+    },
+    {
+      "id": "K07",
+      "params": {
+        "a": 5,
+        "a2": 25,
+        "neg_a2": -25,
+        "sum_wrong": -24,
+        "sum_right": 26
+      },
+      "text": "-24",
+      "accepted": false
+    },
+    {
+      "id": "K08",
+      "params": {
+        "a": 10,
+        "k": 1
+      },
+      "text": "\\log(x + 10)",
+      "accepted": true
+    },
+    {
+      "id": "K08",
+      "params": {
+        "a": 100,
+        "k": 2
+      },
+      "text": "log(x + 100)",
+      "accepted": true
+    },
+    {
+      "id": "K08",
+      "params": {
+        "a": 10,
+        "k": 1
+      },
+      "text": "log x + 1",
+      "accepted": false
+    },
+    {
+      "id": "K08",
+      "params": {
+        "a": 10,
+        "k": 1
+      },
+      "text": "log(10x)",
+      "accepted": false
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 100,
+        "r": 20,
+        "final": 96,
+        "loss": 4
+      },
+      "text": "96",
+      "accepted": true
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 100,
+        "r": 20,
+        "final": 96,
+        "loss": 4
+      },
+      "text": "96 zł",
+      "accepted": true
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 200,
+        "r": 10,
+        "final": 198,
+        "loss": 2
+      },
+      "text": "198",
+      "accepted": true
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 100,
+        "r": 20,
+        "final": 96,
+        "loss": 4
+      },
+      "text": "100",
+      "accepted": false
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 100,
+        "r": 20,
+        "final": 96,
+        "loss": 4
+      },
+      "text": "104",
+      "accepted": false
+    },
+    {
+      "id": "K09",
+      "params": {
+        "p0": 200,
+        "r": 10,
+        "final": 198,
+        "loss": 2
+      },
+      "text": "200",
+      "accepted": false
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 2,
+        "m": 3,
+        "n": 4,
+        "wrong_e": 12,
+        "right_e": 7
+      },
+      "text": "2^7",
+      "accepted": true
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 2,
+        "m": 3,
+        "n": 4,
+        "wrong_e": 12,
+        "right_e": 7
+      },
+      "text": "128",
+      "accepted": true
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 3,
+        "m": 2,
+        "n": 3,
+        "wrong_e": 6,
+        "right_e": 5
+      },
+      "text": "3^5",
+      "accepted": true
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 2,
+        "m": 3,
+        "n": 4,
+        "wrong_e": 12,
+        "right_e": 7
+      },
+      "text": "2^12",
+      "accepted": false
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 2,
+        "m": 3,
+        "n": 4,
+        "wrong_e": 12,
+        "right_e": 7
+      },
+      "text": "4^7",
+      "accepted": false
+    },
+    {
+      "id": "K11",
+      "params": {
+        "b": 3,
+        "m": 2,
+        "n": 3,
+        "wrong_e": 6,
+        "right_e": 5
+      },
+      "text": "3^6",
+      "accepted": false
+    },
+    {
+      "id": "K03",
+      "params": {
+        "a": 3
+      },
+      "text": "x = 0 lub x = 3",
+      "accepted": true
+    },
+    {
+      "id": "K03",
+      "params": {
+        "a": 3
+      },
+      "text": "x = 3",
+      "accepted": false
+    },
+    {
+      "id": "K06",
+      "params": {
+        "a": 5,
+        "a2": 25
+      },
+      "text": "x = 5 lub x = -5",
+      "accepted": true
+    },
+    {
+      "id": "K06",
+      "params": {
+        "a": 5,
+        "a2": 25
+      },
+      "text": "x = 5",
+      "accepted": false
+    },
+    {
+      "id": "K10",
+      "params": {
+        "a": 3,
+        "a2": 9
+      },
+      "text": "x = -3",
+      "accepted": true
+    },
+    {
+      "id": "K10",
+      "params": {
+        "a": 3,
+        "a2": 9
+      },
+      "text": "x = 3 lub x = -3",
+      "accepted": false
+    },
+    {
+      "id": "K02",
+      "params": {
+        "b": 2,
+        "c": 6,
+        "t": -3
+      },
+      "text": "x < -3",
+      "accepted": true
+    },
+    {
+      "id": "K02",
+      "params": {
+        "b": 2,
+        "c": 6,
+        "t": -3
+      },
+      "text": "x > -3",
+      "accepted": false
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "K09",
+  "topic": "Procenty",
+  "title": "Podwyżka i obniżka o ten sam procent",
+  "false_rule": "Podwyżka o p% i następnie obniżka o p% wraca do ceny wyjściowej",
+  "correct_rule": "Druga zmiana liczona jest od nowej kwoty, więc wynik jest mniejszy od ceny wyjściowej",
+  "correct_rule_latex": "p \\cdot (1 + r)(1 - r) = p(1 - r^2) < p",
+  "kuba_restate": "Aha, czyli drugi procent liczę od nowej kwoty, więc nie wracam do ceny wyjściowej.",
+  "param_sets": [
+    {
+      "p0": 100,
+      "r": 20,
+      "final": 96,
+      "loss": 4
+    },
+    {
+      "p0": 200,
+      "r": 10,
+      "final": 198,
+      "loss": 2
+    },
+    {
+      "p0": 150,
+      "r": 20,
+      "final": 144,
+      "loss": 6
+    },
+    {
+      "p0": 80,
+      "r": 25,
+      "final": 75,
+      "loss": 5
+    },
+    {
+      "p0": 400,
+      "r": 50,
+      "final": 300,
+      "loss": 100
+    }
+  ],
+  "derived": {
+    "up": "p0*(1 + r/100)"
+  },
+  "var": "x",
+  "task_latex": "{p0}\\ \\text{zł} \\xrightarrow{+{r}\\%} \\ \\cdot \\ \\xrightarrow{-{r}\\%} \\ ?",
+  "lines": [
+    {
+      "latex": "\\text{cena}_0 = {p0}\\ \\text{zł}",
+      "note": "zadanie"
+    },
+    {
+      "latex": "+{r}\\% \\text{ i } -{r}\\% \\text{ znoszą się}, \\text{ więc } \\text{cena} = {p0}\\ \\text{zł}",
+      "note": "plus i minus tyle samo procent"
+    },
+    {
+      "latex": "\\text{odpowiedź: } {p0}\\ \\text{zł}",
+      "note": ""
+    }
+  ],
+  "wrong_step_index": 1,
+  "correct_line_latex": "{p0} \\cdot \\left(1 + \\tfrac{{r}}{100}\\right) \\cdot \\left(1 - \\tfrac{{r}}{100}\\right) = {final}\\ \\text{zł}",
+  "check": {
+    "kind": "numeric",
+    "wrong_lhs": "{p0}*(1 + {r}/100)*(1 - {r}/100)",
+    "wrong_rhs": "{p0}",
+    "correct_rhs": "{final}"
+  },
+  "ideas": [
+    {
+      "id": "K09-1",
+      "required": true,
+      "text": "Druga zmiana procentowa liczona jest od nowej kwoty, nie od wyjściowej",
+      "keywords": [
+        "od nowej",
+        "od innej kwoty",
+        "od większej",
+        "od wiekszej",
+        "nie od tej samej",
+        "inna podstawa",
+        "od ceny po podwyżce",
+        "od ceny po podwyzce"
+      ]
+    },
+    {
+      "id": "K09-2",
+      "required": true,
+      "text": "Rachunek liczbowy pokazuje, że wynik jest mniejszy od ceny wyjściowej",
+      "keywords": [
+        "{final}",
+        "mniej",
+        "mniejsza",
+        "stracili",
+        "tracimy",
+        "policz",
+        "wychodzi"
+      ]
+    },
+    {
+      "id": "K09-3",
+      "required": false,
+      "text": "Mnożymy współczynniki: 1,{r} · 0,8 < 1",
+      "keywords": [
+        "mnoży",
+        "mnozy",
+        "współczynnik",
+        "wspolczynnik",
+        "razy",
+        "0,96",
+        "mniejsze od 1"
+      ]
+    }
+  ],
+  "probes": {
+    "K09-1": "No ale dodałem {r}% i odjąłem {r}% — to się chyba znosi?",
+    "K09-2": "A policz to dokładnie, ile konkretnie wychodzi?",
+    "K09-3": "A jak to zapisać jednym mnożeniem?"
+  },
+  "hint_probe": "Policz cenę po podwyżce, a dopiero potem odejmij {r}% od tej nowej kwoty.",
+  "curriculum": "Podstawa programowa: I.4 (procenty); matura podstawowa."
+}
