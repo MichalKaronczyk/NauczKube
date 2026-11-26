@@ -28,6 +28,17 @@ Projekt na konkurs **„Sztuczna inteligencja wśród nas”** (Wydział Informa
 
 ---
 
+## Instrukcje
+
+| Dokument | Dla kogo |
+| --- | --- |
+| [`docs/INSTRUKCJA_URUCHOMIENIA.md`](docs/INSTRUKCJA_URUCHOMIENIA.md) | osoba, która chce po prostu uruchomić aplikację (Windows / macOS / Linux) |
+| [`docs/INSTRUKCJA_UZYTKOWNIKA.md`](docs/INSTRUKCJA_UZYTKOWNIKA.md) | uczeń i nauczyciel — przejście przez pełną sesję, ze zrzutami ekranu |
+| [`docs/INSTRUKCJA_KOMPILACJI.md`](docs/INSTRUKCJA_KOMPILACJI.md) | budowanie ze źródeł, testy, wersja binarna, Docker |
+| [`docs/Opis_funkcjonalnosci.md`](docs/Opis_funkcjonalnosci.md) | opis na jedną stronę (materiał zgłoszeniowy) |
+
+![Tablica z rozwiązaniem Kuby](docs/zrzuty/instrukcja/4-tablica.png)
+
 ## Co to robi
 
 Jedna sesja = jeden błąd w rozumowaniu z katalogu, dwie bramki decyzyjne:
@@ -336,3 +347,10 @@ Dodanie trzynastej pozycji = jeden plik JSON. Autotest przy starcie i w CI pilnu
 
 MIT — zgodna z niewyłączną licencją dla UwB z regulaminu konkursu. Szczegóły w [LICENSE](LICENSE).
 Fonty Inter i Caveat na licencji OFL, KaTeX na MIT, ikony Lucide na ISC.
+
+---
+
+## Autorzy
+
+Oliwia Chirko — projekt i wykonanie.
+Praca konkursowa na konkurs „Sztuczna inteligencja wśród nas”, Wydział Informatyki UwB, 2026.
